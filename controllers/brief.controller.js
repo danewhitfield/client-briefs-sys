@@ -26,6 +26,18 @@ exports.getBriefById = (req, res, next) => {
 		});
 };
 
+exports.getQuote = (req, res, next) => {
+	const { brief_id } = req.params;
+	findBriefById(brief_id)
+		.then((brief) => {
+			console.log(brief);
+			res.status(200).send(brief);
+		})
+		.catch((err) => {
+			next(err);
+		});
+};
+
 // // -------------------------------------------------------------------
 
 // // POST

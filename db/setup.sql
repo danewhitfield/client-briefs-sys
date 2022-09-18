@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS client_briefs;
+DROP DATABASE IF EXISTS client_briefs_dev;
 
-CREATE DATABASE client_briefs;
+CREATE DATABASE client_briefs_dev;
