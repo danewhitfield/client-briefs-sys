@@ -169,7 +169,9 @@
   "scripts": {
     "seed": "node ./db/seeds/run-seed.js",
     "setup-dbs": "psql -f ./db/setup.sql",
-    "dev": "npm run seed && nodemon listen.js"
+    "dev": "npm run seed && nodemon listen.js",
+    "start": "node listen.js",
+    "seed:prod": "NODE_ENV=production DATABASE_URL=$(heroku config:get DATABASE_URL) npm run seed"
   },
   "keywords": [],
   "author": "",
