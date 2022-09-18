@@ -26,16 +26,16 @@ exports.getBriefById = (req, res, next) => {
 		});
 };
 
-exports.getQuote = (req, res, next) => {
+exports.getQuoteById = (req, res, next) => {
 	const { brief_id } = req.params;
 	findBriefById(brief_id)
 		.then((brief) => {
-			console.log(brief);
 			res.status(200).send(brief);
 		})
 		.catch((err) => {
 			next(err);
 		});
+	s;
 };
 
 // // -------------------------------------------------------------------
@@ -116,27 +116,3 @@ exports.postBrief = async (req, res, next) => {
 // 			next(err);
 // 		});
 // };
-
-// // -------------------------------------------------------------------
-
-// // LOGIN
-// // exports.loginClient = (req, res, next) => {
-// // 	const { username, password } = req.body;
-// // 	signinClient(username, password)
-// // 		.then(async (client) => {
-// // 			if (client) {
-// // 				const validPassword = await bcrypt.compare(password, client.password);
-
-// // 				if (validPassword) {
-// // 					res.status(201).send(client);
-// // 				} else {
-// // 					res.status(404).send('Password is incorrect');
-// // 				}
-// // 			} else {
-// // 				res.status(404).send(`Client doesn't exist!`);
-// // 			}
-// // 		})
-// // 		.catch((err) => {
-// // 			next(err);
-// // 		});
-// // };
